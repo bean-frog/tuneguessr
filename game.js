@@ -59,7 +59,7 @@ function showCheck() {
   document.getElementById('check').style.visibility = 'visible';
 }
 function getRandomCountryISO() {
-  const countries = Object.keys(svgMapCountryNamesEN);
+  const countries = Object.keys(trimmedCountryNamesEN);
   const randomIndex = Math.floor(Math.random() * countries.length);
   const randomCountry = countries[randomIndex];
   localStorage.setItem('TCCBPDCBLAT', randomCountry);
@@ -69,10 +69,15 @@ function isoToName(iso) {
   if (iso in svgMapCountryNamesEN) {
     return svgMapCountryNamesEN[iso];
   } else {
-    return 'Unknown'; 
+    return 'Unknown :('; 
   }
 }
+function clearSel() {
+  document.getElementById('selected').src = "";
+  document.getElementById('selName').textContent = "";
+}
 function startgame() {
+  clearSel();
 showCheck();
 const randomCountryISO = getRandomCountryISO();
 console.log(`Random Country: ${randomCountryISO}`);
