@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/daisyui/3.9.2/full.css" integrity="sha512-O+Fc80nw5NdS/UwWk8ZQIpJbqYV7qQH6s1E1DwAgJmYwW0AE2liPFEgisBFRfzEfnKCPm3m++Yh04eR9JGk6nA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>TuneGuessr</title>
+</head>
+<body class="flex justify-center items-center">
+    <div id="menu" class="z-50 absolute bg-gray-300 opacity-95 rounded-xl shadow-xl h-fit w-fit p-20 pt-10">
+        <div class="flex flex-row"><h1 class="text-4xl text-black font-bold">Tuneguessr</h1></div>
+        <div class="flex flex-row justify-center"><h1 class="text-l text-black font-semibold">a bean_frog game</h1></div>
+        <div class="flex flex-row justify-center pt-10"><a onclick="localStorage.setItem('mmOn?', 'false')" href="./game.html" id="start" class="btn btn-ghost btn-xl text-white shadow-xl font-bold"><strong>PLAY</strong></a></div>
+        <div class="flex flex-row justify-center pt-10">
+            <button class="btn btn-ghost text-white shadow-xl font-bold"onclick="info.showModal();">Info</button>
+            <button class="btn btn-ghost text-white shadow-xl font-bold" onclick="credits.showModal()">Credits</button>
+        </div>
+
+    </div>
+    <dialog id="info" class="modal">
+        <div class="modal-box">
+          <h3 class="font-bold text-lg">TuneGuessr Info</h3>
+          <p class="py-4">Tuneguessr is a simple game where you are given a song from a certain country. <br> Select which country you believe the song is from, and check your answer with the (hopefully) intuitive sidebar. Your statistics are also displayed, and are saved locally by default.</p>
+          <div class="modal-action">
+            <form method="dialog">
+              <button class="btn">Close</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
+      <dialog id="credits" class="modal">
+        <div class="modal-box">
+          <h3 class="font-bold text-lg">TuneGuessr Credits</h3>
+          <p class="py-4">Thanks to <a target="_blank" class="underline" href="https://github.com/StephanWagner">Stephan Wagner </a>for the <a target="_blank" class="underline" href="https://github.com/stephanwagner/svgMap">svgMap.js</a> library.</p>
+          <p class="py-4">Thanks to <a target="_blank" class="underline" href="https://github.com/hampusborgos">Hampus Joakim Borgos </a> for <a target="_blank" class="underline" href="https://github.com/hampusborgos/country-flags/tree/main">country-flags </a>repository</p>
+          <p class="py-4">Thanks to <a target="_blank" class="underline" href="https://pixabay.com/users/moodmode-33139253/">moodmode </a> for the menu music, <a target="_blank" class="underline" href="https://pixabay.com/music/build-up-scenes-labyrinth-of-despair-166594/">Labyrinth of Despair </a></p>
+          <div class="modal-action">
+            <form method="dialog">
+              <!-- if there is a button in form, it will close the modal -->
+              <button class="btn">Close</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
+    <div id="bgMap" style="background-image: url(../img/4eaf1fd1e1963085158baf21cbb1b5b9.jpg)" class="h-screen w-screen bg-cover bg-no-repeat">
+    </div>
+</body>
+
+</html>

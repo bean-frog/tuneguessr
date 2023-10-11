@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/StephanWagner/svgMap@v2.10.1/dist/svgMap.min.js"></script>
+<link href="https://cdn.jsdelivr.net/gh/StephanWagner/svgMap@v2.10.1/dist/svgMap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/daisyui/3.9.2/full.css" integrity="sha512-O+Fc80nw5NdS/UwWk8ZQIpJbqYV7qQH6s1E1DwAgJmYwW0AE2liPFEgisBFRfzEfnKCPm3m++Yh04eR9JGk6nA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<title>TuneGuessr</title>
+</head>
+<body>
+    <div class="fixed z-50 w-1/5 h-screen bg-white text-black flex flex-col items-center justify-start">
+        <h1 class="text-2xl mt-6">Selected:</h1>
+        <div class="flex flex-row h-fit w-fit p-6">
+            <div class="w-fit h-fit"><img id="selected"></div>
+        </div>
+    </div>
+      
+    
+    <div id="svgMap"></div>
+</body>
+<script src="../game.js"></script>
+<script>
+    // svgmap.js init
+function initSvgMap() {
+    new svgMap({
+      targetElementID: 'svgMap',
+      data: {
+        applyData: 'none', 
+        values: {}
+      },
+      colorNoData: '#ddd',
+      noDataText: "",
+      initialPan: { x: -1000, y: 60 },
+      onGetTooltip: () => {
+        return '';
+      }
+    }).on('countryHovered', function(country) {
+      this.setColor(country, '#000');
+    }).on('countryMouseOut', function(country) {
+      this.setColor(country, '#ddd'); 
+    });
+  }
+  initSvgMap();
+
+</script>
+</html>
