@@ -52,7 +52,12 @@ function returningUser(back) {
   `;
   returningUserModal.showModal();
 }
-
+function hideCheck() {
+document.getElementById('check').style.visibility = 'hidden';
+}
+function showCheck() {
+  document.getElementById('check').style.visibility = 'visible';
+}
 function getRandomCountryISO() {
   const countries = Object.keys(svgMapCountryNamesEN);
   const randomIndex = Math.floor(Math.random() * countries.length);
@@ -60,12 +65,6 @@ function getRandomCountryISO() {
   localStorage.setItem('TCCBPDCBLAT', randomCountry);
   return randomCountry;
 };
-
-
-
-
-
-
 function isoToName(iso) {
   if (iso in svgMapCountryNamesEN) {
     return svgMapCountryNamesEN[iso];
@@ -74,9 +73,11 @@ function isoToName(iso) {
   }
 }
 function startgame() {
-  console.log('poopcock');
-  const randomCountryISO = getRandomCountryISO();
+showCheck();
+const randomCountryISO = getRandomCountryISO();
 console.log(`Random Country: ${randomCountryISO}`);
+document.getElementById('status').style.backgroundColor = "white";
+document.getElementById('status').innerHTML = ""
 };
 //LS stats functions
 function incorrectGuess() {
@@ -84,14 +85,22 @@ function incorrectGuess() {
   lsIncorrect = (parseInt(lsIncorrect, 10) || 0) + 1; 
   localStorage.setItem('tuneguessr-incorrect', lsIncorrect);
   document.getElementById('status').style.backgroundColor = 'red';
-  document.getElementById('status').textContent = 'You absolute donkey thats wrong';
+  document.getElementById('status').innerHTML = `
+  <p>You absolute donkey that's wrong</p>
+  <button class="btn my-4 px-4 py-2 bg-blue-500 text-white rounded" onclick="startgame()">Next</button>
+  `
+  hideCheck();
 }
 function correctGuess() {
   let lsCorrect = localStorage.getItem('tuneguessr-correct');
   lsCorrect = (parseInt(lsCorrect, 10) || 0) + 1; 
   localStorage.setItem('tuneguessr-correct', lsCorrect);
   document.getElementById('status').style.backgroundColor = 'green';
-  document.getElementById('status').textContent = 'Correct! Good job!';
+  document.getElementById('status').innerHTML = `
+  <p>Correct! Good job!</p>
+  <button class="btn my-4 px-4 py-2 bg-blue-500 text-white rounded" onclick="startgame()">Next</button>
+  `
+  hideCheck();
 }
 function totalGuess() {
   let lsTotal = localStorage.getItem('tuneguessr-total');
@@ -108,7 +117,7 @@ function updateStats() {
   <li>Total Guesses: ${lsTotal}</li>
   <li>Total Correct Guesses: ${lsCorrect}</li>
   <li>Total Incorrect Guesses: ${lsIncorrect}</li>
-  <li>Percent Correct Guesses: ${Math.round((lsCorrect / lsTotal) * 100)}</li>
+  <li>Percent Correct Guesses: ${Math.round((lsCorrect / lsTotal) * 100)}%</li>
  </ul>
  `
  document.getElementById('statsDiv').innerHTML = template;
