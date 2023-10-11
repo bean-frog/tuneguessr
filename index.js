@@ -8,9 +8,9 @@ document.getElementById('enter').onclick = function() {
     document.body.appendChild(frame);
     let audio = document.getElementById('menumusic');
     audio.play();
-    localStorage.setItem('mmOn?', 'true')
+    localStorage.setItem('tuneguessr-mmOn?', 'true')
     let menuMusicStop = setInterval(function(){
-        if (localStorage.getItem('mmOn?') === 'false') {
+        if (localStorage.getItem('tuneguessr-mmOn?') === 'false') {
             audio.pause();
             clearInterval(menuMusicStop)
         }

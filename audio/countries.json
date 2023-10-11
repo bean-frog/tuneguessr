@@ -1,223 +1,48 @@
-[
-    {
-      "country": "MX",
-      "song": "Jarabe Tapatio",
-      "timestamp": "0:00"
-    },
-    {
-      "country": "FR",
-      "song": "Traditionell Musette",
-      "timestamp": "0:21"
-    },
-    {
-      "country": "ZA",
-      "song": "Waka Waka",
-      "timestamp": "0:43"
-    },
-    {
-      "country": "CA",
-      "song": "Bear Hugger Theme",
-      "timestamp": "0:58"
-    },
-    {
-      "country": "IE",
-      "song": "Drunken Sailor",
-      "timestamp": "1:18"
-    },
-    {
-      "country": "CH",
-      "song": "Yoddeling",
-      "timestamp": "1:43"
-    },
-    {
-      "country": "EG",
-      "song": "Osiris",
-      "timestamp": "2:03"
-    },
-    {
-      "country": "CO",
-      "song": "La Salsa Llego",
-      "timestamp": "2:24"
-    },
-    {
-      "country": "NO",
-      "song": "Ved Stanford Brua",
-      "timestamp": "2:42"
-    },
-    {
-      "country": "IR",
-      "song": "Not Until You Return",
-      "timestamp": "3:09"
-    },
-    {
-      "country": "DE",
-      "song": "Erika",
-      "timestamp": "3:27"
-    },
-    {
-      "country": "CN",
-      "song": "Yi Jian Mei",
-      "timestamp": "3:49"
-    },
-    {
-      "country": "PL",
-      "song": "W Moim Ogródecku",
-      "timestamp": "4:17"
-    },
-    {
-      "country": "US",
-      "song": "Cotton Eye Joe",
-      "timestamp": "4:38"
-    },
-    {
-      "country": "CU",
-      "song": "Guantanamera",
-      "timestamp": "4:59"
-    },
-    {
-      "country": "TZ",
-      "song": "Nants' Ingonyama",
-      "timestamp": "5:22"
-    },
-    {
-      "country": "IT",
-      "song": "Tarantella Napoletana",
-      "timestamp": "5:42"
-    },
-    {
-      "country": "MN",
-      "song": "In Praise Of Genghis Khan",
-      "timestamp": "6:00"
-    },
-    {
-      "country": "FI",
-      "song": "Säkkijärven Polkka",
-      "timestamp": "6:19"
-    },
-    {
-      "country": "VA",
-      "song": "Salve Regina",
-      "timestamp": "6:36"
-    },
-    {
-      "country": "RU",
-      "song": "Tri Poloski",
-      "timestamp": "7:03"
-    },
-    {
-      "country": "IL",
-      "song": "Hava Nagila",
-      "timestamp": "7:21"
-    },
-    {
-      "country": "KR",
-      "song": "Gangnam Style",
-      "timestamp": "7:42"
-    },
-    {
-      "country": "RS",
-      "song": "Serbia Strong",
-      "timestamp": "8:01"
-    },
-    {
-      "country": "BR",
-      "song": "Samba De Janeiro",
-      "timestamp": "8:19"
-    },
-    {
-      "country": "AT",
-      "song": "Mei Muata Und Mei Vota",
-      "timestamp": "8:39"
-    },
-    {
-      "country": "IN",
-      "song": "Mundian To Bach Ke",
-      "timestamp": "8:58"
-    },
-    {
-      "country": "KP",
-      "song": "Korea Does What It Is Determined To Do",
-      "timestamp": "9:18"
-    },
-    {
-      "country": "NL",
-      "song": "Dutch Windmills",
-      "timestamp": "9:40"
-    },
-    {
-      "country": "JM",
-      "song": "One Love",
-      "timestamp": "10:02"
-    },
-    {
-      "country": "GB",
-      "song": "Rule Britannia",
-      "timestamp": "10:25"
-    },
-    {
-      "country": "SA",
-      "song": "Bad Girls Instrumental",
-      "timestamp": "10:47"
-    },
-    {
-      "country": "SE",
-      "song": "Herr Mannelig",
-      "timestamp": "11:01"
-    },
-    {
-      "country": "AR",
-      "song": "El Tango De Roxanne",
-      "timestamp": "11:23"
-    },
-    {
-      "country": "GB",
-      "song": "Scotland The Brave",
-      "timestamp": "11:41"
-    },
-    {
-      "country": "TR",
-      "song": "Traditional Turkish Music",
-      "timestamp": "12:02"
-    },
-    {
-      "country": "JP",
-      "song": "Senbonzakura",
-      "timestamp": "12:24"
-    },
-    {
-      "country": "DE",
-      "song": "Bayerischer Defiliermarsch",
-      "timestamp": "12:45"
-    },
-    {
-      "country": "HU",
-      "song": "Hungarian Dance No. 5",
-      "timestamp": "13:04"
-    },
-    {
-      "country": "AU",
-      "song": "Tribal War Didgeridoo",
-      "timestamp": "13:22"
-    },
-    {
-      "country": "GR",
-      "song": "Zorba’s Dance",
-      "timestamp": "13:41"
-    },
-    {
-      "country": "ES",
-      "song": "Pregon Canastero",
-      "timestamp": "14:21"
-    },
-    {
-      "country": "CZ",
-      "song": "Dvorak Polka",
-      "timestamp": "14:42"
-    },
-    {
-      "country": "BG",
-      "song": "Tri Radi",
-      "timestamp": "14:59"
-    }
-  ]
+{
+    "Mexico": "Mexico.mp3",
+    "France": "France.mp3",
+    "South Africa": "SouthAfrica.mp3",
+    "Canada": "Canada.mp3",
+    "Ireland": "Ireland.mp3",
+    "Switzerland": "Switzerland.mp3",
+    "Egypt": "Egypt.mp3",
+    "Colombia": "Colombia.mp3",
+    "Norway": "Norway.mp3",
+    "Iran": "Iran.mp3",
+    "Germany": "Germany.mp3",
+    "China": "China.mp3",
+    "Poland": "Poland.mp3",
+    "United States of America": "USA.mp3",
+    "Cuba": "Cuba.mp3",
+    "Tanzania": "Tanzania.mp3",
+    "Italy": "Italy.mp3",
+    "Mongolia": "Mongolia.mp3",
+    "Finland": "Finland.mp3",
+    "Vatican City": "Vatican.mp3",
+    "Russia": "Russia.mp3",
+    "Israel": "Israel.mp3",
+    "South Korea": "SouthKorea.mp3",
+    "Serbia": "Serbia.mp3",
+    "Brazil": "Brazil.mp3",
+    "Austria": "Austria.mp3",
+    "India": "India.mp3",
+    "North Korea": "NorthKorea.mp3",
+    "Netherlands": "Netherlands.mp3",
+    "Jamaica": "Jamaica.mp3",
+    "United Kingdom": "UK.mp3",
+    "Saudi Arabia": "SaudiArabia.mp3",
+    "Sweden": "Sweden.mp3",
+    "Argentina": "Argentina.mp3",
+    "Scotland": "Scotland.mp3",
+    "Turkey": "Turkey.mp3",
+    "Japan": "Japan.mp3",
+    "Bavaria": "Bavaria.mp3",
+    "Hungary": "Hungary.mp3",
+    "Australia": "Australia.mp3",
+    "Greece": "Greece.mp3",
+    "Hawaii": "Hawaii.mp3",
+    "Spain": "Spain.mp3",
+    "Czechia": "Czechia.mp3",
+    "Bulgaria": "Bulgaria.mp3"
+  }
   
