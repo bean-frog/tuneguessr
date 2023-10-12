@@ -28,7 +28,6 @@ function logId(event) {
   }
 }
 document.addEventListener("click", logId);
-
 function onboarding() {
   onboardingModal.showModal();
   document.getElementById('finishOb').addEventListener('click', function() {
