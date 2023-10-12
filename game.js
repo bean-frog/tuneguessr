@@ -95,7 +95,10 @@ showCheck();
 const randomCountryISO = getRandomCountryISO();
 console.log(`Random Country: ${randomCountryISO}`);
 document.getElementById('status').style.backgroundColor = "white";
-document.getElementById('status').innerHTML = ""
+document.getElementById('status').innerHTML = "";
+let audio = document.getElementById('tuneguessr-audio');
+audio.src = `../audio/${localStorage.getItem('TCCBPDCBLAT')}.mp3`;
+audio.play();
 };
 //LS stats functions
 function incorrectGuess() {
@@ -109,6 +112,7 @@ function incorrectGuess() {
   <button class="btn my-4 px-4 py-2 bg-blue-500 text-white rounded" onclick="startgame()">Next</button>
   `
   hideCheck();
+  document.getElementById('tuneguessr-audio').pause()
 }
 function correctGuess() {
   let lsCorrect = localStorage.getItem('tuneguessr-correct');
@@ -120,6 +124,7 @@ function correctGuess() {
   <button class="btn my-4 px-4 py-2 bg-blue-500 text-white rounded" onclick="startgame()">Next</button>
   `
   hideCheck();
+  document.getElementById('tuneguessr-audio').pause();
 }
 function totalGuess() {
   let lsTotal = localStorage.getItem('tuneguessr-total');
