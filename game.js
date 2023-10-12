@@ -93,7 +93,7 @@ function startgame() {
   clearSel();
 showCheck();
 const randomCountryISO = getRandomCountryISO();
-console.log(`Random Country: ${randomCountryISO}`);
+console.log(`Random Country: ${randomCountryISO} (${isoToName(randomCountryISO)})`);
 document.getElementById('status').style.backgroundColor = "white";
 document.getElementById('status').innerHTML = "";
 let audio = document.getElementById('tuneguessr-audio');
