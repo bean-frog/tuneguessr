@@ -9,6 +9,7 @@
 <script src="https://cdn.jsdelivr.net/gh/stephanwagner/svgmap/demo/html/local/countriesEN.js"></script>
 <link href="https://cdn.jsdelivr.net/gh/StephanWagner/svgMap@v2.10.1/dist/svgMap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/daisyui/3.9.2/full.css" integrity="sha512-O+Fc80nw5NdS/UwWk8ZQIpJbqYV7qQH6s1E1DwAgJmYwW0AE2liPFEgisBFRfzEfnKCPm3m++Yh04eR9JGk6nA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <title>TuneGuessr</title>
 </head>
@@ -27,11 +28,33 @@
             <div id="status" class="w-full h-1/2 text-white font-bold text-l border border-black p-4"></div>
         </div>
     
-        <div id="statsDiv" class="w-full h-1/3 bg-white text-black flex flex-col items-center justify-start">
-            
+        <div class="w-full h-1/3 bg-white text-black flex flex-col items-center justify-start">
+            <div class="absolute m-4 bottom-0 left-0"><i onclick="settingModal.showModal()" class="text-3xl fas fa-gear"></i></div>
+
+          <div id="statsDiv"></div>
         </div>
     </div>
-    
+    <dialog id="settingModal" class="modal">
+      <div class="modal-box">
+        <h3 class="font-bold text-xl">Options</h3>
+        <div>
+          <label for="changeUnameInput" class="m-2">Change your username</label>
+          <input name="changeUnameInput" id="changeUnameInput" class="p-2 border-full border-black border-2" placeholder="New Username">
+          <button onclick="changeUsername(document.getElementById('changeUnameInput').value); updateStats();" class="m-2 p-2 bg-grey-300 border-full border-black border-1">Change</button>
+        </div>
+        <div>
+          <label class="m-2">Wipe Stats (NOT REVERSABLE!!!)</label>
+          <button id="delStats" onclick="wipeStats();" class="btn m-2 p-2 bg-grey-300 border-full border-black border-1">DELETE STATS</button>
+        </div>
+        
+         
+        <div class="modal-action">
+              <form method="dialog">
+                <button class="btn">Done</button>
+              </form>
+            </div>        
+          </div>
+    </dialog>
     <dialog id="onboardingModal" class="modal">
         <div class="modal-box">
           <h3 class="font-bold text-xl">Hey! You must be new around here.</h3>

@@ -46,11 +46,24 @@ function returningUser(back) {
     <h3 class="font-bold text-lg">${titleText}</h3>
     <div class="modal-action">
       <form method="dialog">
-        <button onclick='startgame();' class="btn">Play Tuneguessr</button>
+        <button onclick='startgame();' class="btn">Start Game</button>
       </form>
     </div>
   `;
   returningUserModal.showModal();
+}
+function wipeStats() {
+  localStorage.setItem('tuneguessr-incorrect', '');
+  localStorage.setItem('tuneguessr-correct', '');
+  localStorage.setItem('tuneguessr-total', '');
+  updateStats()
+}
+function changeUsername(newName) {
+  if (newName && !newName == '') {
+  localStorage.setItem('tuneguessr-username', newName)
+  } else {
+    alert('no name provided')
+  }
 }
 function hideCheck() {
 document.getElementById('check').style.visibility = 'hidden';
@@ -92,6 +105,7 @@ function incorrectGuess() {
   document.getElementById('status').style.backgroundColor = 'red';
   document.getElementById('status').innerHTML = `
   <p>You absolute donkey that's wrong</p>
+  <p>The correct answer was ${localStorage.getItem('TCCBPDCBLAT')} (${isoToName(localStorage.getItem('TCCBPDCBLAT'))})</p>
   <button class="btn my-4 px-4 py-2 bg-blue-500 text-white rounded" onclick="startgame()">Next</button>
   `
   hideCheck();
