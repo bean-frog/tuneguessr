@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
 //selected country display
 function keepLastTwo(str) {
   return str.slice(-2); 
@@ -26,8 +27,11 @@ function logId(event) {
     document.getElementById('selected').src = `https://cdn.jsdelivr.net/gh/hampusborgos/country-flags/png250px/${currentSel}.png`
     document.getElementById('selName').textContent = isoToName(currentSel.toUpperCase());
   }
+ 
 }
 document.addEventListener("click", logId);
+
+
 function onboarding() {
   onboardingModal.showModal();
   document.getElementById('finishOb').addEventListener('click', function() {
@@ -45,7 +49,7 @@ function returningUser(back) {
     <h3 class="font-bold text-lg">${titleText}</h3>
     <div class="modal-action">
       <form method="dialog">
-        <button onclick='startgame();' class="btn">Start Game</button>
+        <button onclick='begingame();' class="btn">Start Game</button>
       </form>
     </div>
   `;
@@ -88,7 +92,8 @@ function clearSel() {
   document.getElementById('selected').src = "";
   document.getElementById('selName').textContent = "";
 }
-function startgame() {
+function begingame() {
+  console.log('start game called')
   clearSel();
 showCheck();
 const randomCountryISO = getRandomCountryISO();
@@ -108,7 +113,7 @@ function incorrectGuess() {
   document.getElementById('status').innerHTML = `
   <p>You absolute donkey that's wrong</p>
   <p>The correct answer was ${localStorage.getItem('TCCBPDCBLAT')} (${isoToName(localStorage.getItem('TCCBPDCBLAT'))})</p>
-  <button class="btn my-4 px-4 py-2 bg-blue-500 text-white rounded" onclick="startgame()">Next</button>
+  <button class="btn my-4 px-4 py-2 bg-blue-500 text-white rounded"id="next" onclick="begingame()">Next</button>
   `
   hideCheck();
   document.getElementById('tuneguessr-audio').pause()
@@ -120,7 +125,7 @@ function correctGuess() {
   document.getElementById('status').style.backgroundColor = 'green';
   document.getElementById('status').innerHTML = `
   <p>Correct! Good job!</p>
-  <button class="btn my-4 px-4 py-2 bg-blue-500 text-white rounded" onclick="startgame()">Next</button>
+  <button class="btn my-4 px-4 py-2 bg-blue-500 text-white rounded" id="next" onclick="begingame()">Next</button>
   `
   hideCheck();
   document.getElementById('tuneguessr-audio').pause();
@@ -154,3 +159,32 @@ function makeGuess() {
   }
   updateStats();
 }
+document.getElementById('check').addEventListener('click', makeGuess);
+
+document.addEventListener('keydown', e => {
+  if (e.code == "Enter") {
+    e.preventDefault();
+    return;
+  }
+	if (e.code == 'Space') {
+		e.preventDefault()
+		e.stopImmediatePropagation();
+		e.stopPropagation();
+		if (document.getElementById('next')) {
+			begingame();
+		} else {
+			makeGuess();
+		}
+	} else {
+		return;
+	}
+});
+document.addEventListener('keyup', e => {
+  if (e.code == 'Space' || e.code == 'Enter') {
+    e.preventDefault()            // - \
+    e.stopImmediatePropagation(); //    > super hacky fix to stop that goofy ah issue where begingame() was being called due to default events. may cause error?
+    e.stopPropagation();          // - /
+   } else {
+    return;
+   }
+})

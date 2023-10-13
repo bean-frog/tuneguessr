@@ -1,0 +1,7 @@
+add music for unfinished countries (unfinishedcountries.txt)
+make the random selection better
+    - favor countries who haven't been chosen for x rounds
+    - impossible to reroll the same country within (5?) rounds
+    - second list of songs? chooses randomly between 1 and 2, then picks a song from whichever
+
+add more countries (yt video has every country, use that probably?)
