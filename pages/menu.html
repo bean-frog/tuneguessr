@@ -8,15 +8,15 @@
     <title>TuneGuessr</title>
 </head>
 <body class="flex justify-center items-center">
-    <div id="menu" class="z-50 absolute bg-gray-300 opacity-95 rounded-xl shadow-xl h-fit w-fit p-20 pt-10">
-        <div class="flex flex-row"><h1 class="text-4xl text-black font-bold">Tuneguessr</h1></div>
+    <div id="menu" class="backdrop-blur-xl z-50 absolute bg-gray-200 opacity-90 rounded-xl shadow-xl h-fit w-fit p-20 pt-10">
+        <div class="flex flex-row justify-center"><h1 class="text-4xl text-black font-bold">Tuneguessr</h1></div>
         <div class="flex flex-row justify-center"><h1 class="text-l text-black font-semibold">a bean_frog game</h1></div>
-        <div class="flex flex-row justify-center pt-10"><a onclick="localStorage.setItem('tuneguessr-mmOn?', 'false')" href="./game.html" id="start" class="btn btn-ghost btn-xl text-white shadow-xl font-bold"><strong>PLAY</strong></a></div>
+        <div class="flex flex-row justify-center pt-10"><a onclick="localStorage.setItem('tuneguessr-mmOn?', 'false')" href="./game.html" id="start" class="btn btn-success btn-lg text-black text-3xl shadow-xl font-bold"><strong>PLAY</strong></a></div>
         <div class="flex flex-row justify-center pt-10">
             <button class="btn btn-ghost text-white shadow-xl font-bold"onclick="info.showModal();">Info</button>
             <button class="btn btn-ghost text-white shadow-xl font-bold" onclick="credits.showModal()">Credits</button>
+            <a target="_blank" href="../TODO.txt" class="btn btn-ghost text-white shadow-xl font-bold">TO-DO</a>
         </div>
-
     </div>
     <dialog id="info" class="modal">
         <div class="modal-box">
@@ -37,7 +37,6 @@
           <p class="py-4">Thanks to <a target="_blank" class="underline" href="https://pixabay.com/users/moodmode-33139253/">moodmode </a> for the menu music, <a target="_blank" class="underline" href="https://pixabay.com/music/build-up-scenes-labyrinth-of-despair-166594/">Labyrinth of Despair </a></p>
           <div class="modal-action">
             <form method="dialog">
-              <!-- if there is a button in form, it will close the modal -->
               <button class="btn">Close</button>
             </form>
           </div>

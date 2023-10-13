@@ -1,4 +1,5 @@
 add music for unfinished countries (unfinishedcountries.txt)
+add timer (each guess) + scoring (time based) per session, not saved locally
 make the random selection better
     - favor countries who haven't been chosen for x rounds
     - impossible to reroll the same country within (5?) rounds
