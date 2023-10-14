@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   checkbox.addEventListener('change', function() {
     if (this.checked) {
-      distinguish()
+      distinguish();
     } else if (!this.checked) {
       dontDistinguish()
     }
