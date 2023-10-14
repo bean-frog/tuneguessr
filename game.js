@@ -1,3 +1,11 @@
+var debugMode = 'false'
+function debugMessage(content) {
+  if (debugMode = 'true') {
+    console.log('[DEBUG]:' + content)
+  } else {
+    return;
+  }
+}
 //game init
 document.addEventListener('DOMContentLoaded', function() {
   if (!localStorage.getItem('tuneguessr-newuser?')) {
@@ -6,15 +14,54 @@ document.addEventListener('DOMContentLoaded', function() {
     returningUser();
     updateStats();
   }
-  document.addEventListener('DOMContentLoaded', function() {
-    const zoomControl = document.querySelector('.svgMap-map-controls-wrapper');
-    if (zoomControl) {
-      zoomControl.style.right = '0';
-      zoomControl.style.left = 'unset';
+  const zoomControl = document.querySelector('.svgMap-map-controls-wrapper');
+  if (zoomControl) {
+    zoomControl.style.right = '0';
+    zoomControl.style.left = 'unset';
+  }
+
+
+});
+document.addEventListener('DOMContentLoaded', function() {
+  const countries = document.querySelectorAll('.svgMap-country');
+  function distinguish() {
+    countries.forEach(function(country) {
+      const countryCode = country.id.slice(-2); 
+      if (trimmedCountryNamesEN.hasOwnProperty(countryCode)) {
+        country.style.fill = '#242526';
+      } else {
+        country.style.fill = '#909090';
+      }
+    });
+  }
+  function dontDistinguish() {
+    countries.forEach(function(country) {
+     country.style.fill = "#242526"
+    });
+  }
+  const lsDistinguish = localStorage.getItem('tuneguessr-distinguishUnused');
+  if (lsDistinguish == true) {
+    distinguish();
+  } else if (lsDistinguish == false) {
+    dontDistinguish();
+  }
+  const checkbox = document.getElementById('distinguishPossibleCountries');
+  if (checkbox.checked) {
+  distinguish();
+  localStorage.setItem('tuneguessr-distinguishUnused', true);
+  } else {
+    dontDistinguish();
+    localStorage.setItem('tuneguessr-distinguishUnused', false);
+  }
+  checkbox.addEventListener('change', function() {
+    if (this.checked) {
+      distinguish()
+    } else if (!this.checked) {
+      dontDistinguish()
     }
   });
-});
 
+});
 //selected country display
 function keepLastTwo(str) {
   return str.slice(-2); 
