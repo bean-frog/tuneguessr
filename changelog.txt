@@ -3,3 +3,4 @@
     - Update Info modal
     - Add Google Analytics
     - Add animated world map in title screen
+    - TODO page now displays the same way as changelog
