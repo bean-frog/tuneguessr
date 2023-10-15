@@ -71,7 +71,8 @@ function logId(event) {
   if (event.target.classList.contains("svgMap-country")) {
     currentSel = keepLastTwo(event.target.id.toLowerCase())
     console.log(`Clicked country ID: ${currentSel}`);
-    document.getElementById('selected').src = `https://cdn.jsdelivr.net/gh/hampusborgos/country-flags/png250px/${currentSel}.png`
+    document.getElementById('selected').style.display = "block";
+    document.getElementById('selected').src = `https://cdn.jsdelivr.net/gh/hampusborgos/country-flags/png100px/${currentSel}.png`
     document.getElementById('selName').textContent = isoToName(currentSel.toUpperCase());
   }
  
@@ -136,8 +137,9 @@ function isoToName(iso) {
   }
 }
 function clearSel() {
-  document.getElementById('selected').src = "";
+  document.getElementById('selected').removeAttribute('src');
   document.getElementById('selName').textContent = "";
+  document.getElementById('selected').style.display = "none";
 }
 function begingame() {
   console.log('start game called')
@@ -156,20 +158,20 @@ function incorrectGuess() {
   let lsIncorrect = localStorage.getItem('tuneguessr-incorrect');
   lsIncorrect = (parseInt(lsIncorrect, 10) || 0) + 1; 
   localStorage.setItem('tuneguessr-incorrect', lsIncorrect);
-  document.getElementById('status').style.backgroundColor = 'red';
+  document.getElementById('status').style.backgroundColor = '#dc2626';
   document.getElementById('status').innerHTML = `
   <p>You absolute donkey that's wrong</p>
   <p>The correct answer was ${localStorage.getItem('TCCBPDCBLAT')} (${isoToName(localStorage.getItem('TCCBPDCBLAT'))})</p>
   <button class="btn my-4 px-4 py-2 bg-blue-500 text-white rounded"id="next" onclick="begingame()">Next</button>
   `
   hideCheck();
-  document.getElementById('tuneguessr-audio').pause()
+  document.getElementById('tuneguessr-audio').pause();
 }
 function correctGuess() {
   let lsCorrect = localStorage.getItem('tuneguessr-correct');
   lsCorrect = (parseInt(lsCorrect, 10) || 0) + 1; 
   localStorage.setItem('tuneguessr-correct', lsCorrect);
-  document.getElementById('status').style.backgroundColor = 'green';
+  document.getElementById('status').style.backgroundColor = '#16a34a';
   document.getElementById('status').innerHTML = `
   <p>Correct! Good job!</p>
   <button class="btn my-4 px-4 py-2 bg-blue-500 text-white rounded" id="next" onclick="begingame()">Next</button>

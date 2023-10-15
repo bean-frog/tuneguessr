@@ -22,44 +22,49 @@
   gtag('config', 'G-8PHX1Y2CBG');
 </script>
 <body>
-    <div class="fixed z-50 lg:w-1/5 md:w-1/4 h-screen bg-white text-black flex flex-col items-center justify-start">
-        <div class="w-full h-1/3  text-black flex flex-col items-center justify-start">
-            <h1 class="text-2xl mt-6">Your Selection:</h1>
-            <h1 id="selName" class="text-xl font-bold mt-6"></h1>
-            <div class="flex flex-row h-fit w-fit p-6 pt-2">
-                <div class="w-fit h-fit border-full border-black border-2 shadow-lg"><img id="selected"></div>
+  <div class="fixed z-50 lg:w-1/5 md:w-1/4 h-screen bg-white text-black flex flex-col items-center justify-start">
+    <div class="w-full h-1/3 text-black flex flex-col items-center justify-start">
+        <h1 class="text-2xl mt-6 font-semibold">Selected Country</h1>
+        <h1 id="selName" class="text-2xl mt-6 font-extrabold text-blue-500"></h1>
+        <div class="flex flex-row p-4">
+            <div class="w-full h-fit border-2 border-black shadow-lg rounded-lg overflow-hidden">
+                <img id="selected" class="w-full h-full object-cover">
             </div>
         </div>
-        <div class="w-full h-1/3  text-black flex flex-col items-center justify-start mt-6">
-            <button class="btn my-4 px-4 py-2 bg-blue-500 text-white rounded" id="check">CHECK</button>
-            <audio id="tuneguessr-audio" controls></audio>
-            <div id="status" class="w-full h-1/2 text-white font-bold text-l border border-black p-4"></div>
-        </div>
-    
-        <div class="w-full h-1/3 text-black flex flex-col items-center justify-start">
-            <div class="absolute m-4 bottom-0 left-0"><i onclick="settingModal.showModal()" class="text-3xl fas fa-gear"></i></div>
-
-          <div id="statsDiv"></div>
-        </div>
     </div>
+    <div class="w-full h-1/3 text-black flex flex-col items-center justify-start mt-6">
+        <button class="btn bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded" id="check">CHECK</button>
+        <audio id="tuneguessr-audio" class="mt-4"></audio>
+        <div id="status" class="w-full h-fit min-h-1/2 text-white font-bold text-lg p-4 rounded mt-4"></div>
+    </div>
+    <div class="w-full h-1/3 text-black flex flex-col items-center justify-start mt-6">
+        <div class="absolute m-4 bottom-0 left-0">
+            <i onclick="settingModal.showModal()" class="text-3xl fas fa-cog cursor-pointer text-blue-500 hover:text-blue-600"></i>
+        </div>
+        <div id="statsDiv"></div>
+    </div>
+</div>
+
     <dialog id="settingModal" class="modal">
       <div class="modal-box">
-        <h3 class="font-bold text-xl">Options</h3>
-        <div>
-          <label for="distinguish" class="m-2">Lighter color for un-used countries</label>
-          <input type="checkbox" name="distinguish" id="distinguishPossibleCountries" checked>
-        </div>
-        <div>
-          <label for="changeUnameInput" class="m-2">Change your username</label>
-          <input name="changeUnameInput" id="changeUnameInput" class="p-2 border-full border-black border-2" placeholder="New Username">
-          <button onclick="changeUsername(document.getElementById('changeUnameInput').value); updateStats();" class="m-2 p-2 bg-grey-300 border-full border-black border-1">Change</button>
-        </div>
-        <div>
-          <label class="m-2">Wipe Stats (NOT REVERSABLE!!!)</label>
-          <button id="delStats" onclick="wipeStats();" class="btn m-2 p-2 bg-grey-300 border-full border-black border-1">DELETE STATS</button>
-        </div>
-        
-         
+        <h3 class="font-bold text-xl mb-4">Options</h3>
+<div class="mb-4">
+  <label for="distinguish" class="flex items-center space-x-2">
+    <span>Lighter color for un-used countries</span>
+    <input type="checkbox" name="distinguish" id="distinguishPossibleCountries" checked class="form-checkbox h-4 w-4 text-gray-600">
+  </label>
+</div>
+<div class="mb-4">
+  <label for="changeUnameInput" class="block mb-2">Change your username</label>
+  <input name="changeUnameInput" id="changeUnameInput" class="px-4 py-2 border border-black" placeholder="New Username">
+  <button onclick="changeUsername(document.getElementById('changeUnameInput').value); updateStats();" class="mt-2 px-4 py-2 bg-gray-300 border border-black btn">Change</button>
+</div>
+<div class="mb-4">
+  <label class="block mb-2">Wipe Stats (NOT REVERSABLE!!!)</label>
+  <button id="delStats" onclick="wipeStats();" class="px-4 py-2 bg-gray-300 border border-black btn">DELETE STATS</button>
+</div>
+
+
         <div class="modal-action">
               <form method="dialog">
                 <button class="btn">Done</button>

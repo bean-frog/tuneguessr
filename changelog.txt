@@ -4,3 +4,5 @@
     - Add Google Analytics
     - Add animated world map in title screen
     - TODO page now displays the same way as changelog
+    - Slight UI improvements
+    - Song now pauses when incorrect
