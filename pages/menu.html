@@ -27,7 +27,7 @@
         </div>
         <div class="flex flex-row justify-center pt-4">
           <button class="btn btn-ghost shadow-xl font-bold" onclick="changelog.showModal()">Changelog</button>
-          <a target="_blank" href="../TODO.txt" class="btn btn-ghost  shadow-xl font-bold">TO-DO</a>
+          <button class="btn btn-ghost shadow-xl font-bold" onclick="todo.showModal()">TO-DO</button>
 </div>
     </div>
     <dialog id="info" class="modal">
@@ -58,6 +58,16 @@
       <dialog id="changelog" class="modal">
         <div class="modal-box">
           <iframe src="../changelog.txt" class="h-full w-full"></iframe>
+          <div class="modal-action">
+            <form method="dialog">
+              <button class="btn">Close</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
+      dialog id="todo" class="modal">
+        <div class="modal-box">
+          <iframe src="../TODO.txt" class="h-full w-full"></iframe>
           <div class="modal-action">
             <form method="dialog">
               <button class="btn">Close</button>
