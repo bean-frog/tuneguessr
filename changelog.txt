@@ -1,5 +1,6 @@
 16 OCT 2023:
     - Countries that have been displayed within the past 10 rounds are no longer candidates for the next country.
+
 15 OCT 2023:
     - Implement changelog
     - Update Info modal
