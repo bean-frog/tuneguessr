@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
     countries.forEach(function(country) {
       const countryCode = country.id.slice(-2); 
       if (trimmedCountryNamesEN.hasOwnProperty(countryCode)) {
-        country.style.fill = '#242526';
+        country.style.fill = '#6b6967';
       } else {
         country.style.fill = '#909090';
       }
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   function dontDistinguish() {
     countries.forEach(function(country) {
-     country.style.fill = "#242526"
+     country.style.fill = "#6b6967"
     });
   }
   const lsDistinguish = localStorage.getItem('tuneguessr-distinguishUnused');

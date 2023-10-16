@@ -6,3 +6,5 @@
     - TODO page now displays the same way as changelog
     - Slight UI improvements
     - Song now pauses when incorrect
+    - All available countries now have songs
+    - OFFICIAL RELEASE DAY YAYY :D
