@@ -6,6 +6,7 @@
     <script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/StephanWagner/svgMap@v2.10.1/dist/svgMap.min.js"></script>
 <script src="../countryNamesEN.js"></script>
+<script src="../countries_metal.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/stephanwagner/svgmap/demo/html/local/countriesEN.js"></script>
 <link href="https://cdn.jsdelivr.net/gh/StephanWagner/svgMap@v2.10.1/dist/svgMap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" referrerpolicy="no-referrer" />
@@ -49,6 +50,12 @@
     <dialog id="settingModal" class="modal">
       <div class="modal-box">
         <h3 class="font-bold text-xl mb-4">Options</h3>
+        <!--<div class="mb-4">
+          <label for="metalmode" class="flex items-center space-x-2">
+            <span>Metal Mode (all songs are metal)</span>
+            <input type="checkbox" name="metalmode" id="metalmodecheck" class="form-checkbox h-4 w-4 text-gray-600">
+          </label>
+        </div> -->
 <div class="mb-4">
   <label for="distinguish" class="flex items-center space-x-2">
     <span>Lighter color for un-used countries</span>
@@ -64,6 +71,7 @@
   <label class="block mb-2">Wipe Stats (NOT REVERSABLE!!!)</label>
   <button id="delStats" onclick="wipeStats();" class="px-4 py-2 bg-gray-300 border border-black btn">DELETE STATS</button>
 </div>
+
 
 
         <div class="modal-action">
