@@ -158,9 +158,6 @@ function getRandomCountryISO() {
   localStorage.setItem('TCCBPDCBLAT', randomCountry);
   return randomCountry;
 }
-
-
-
 function isoToName(iso) {
 	if (iso in svgMapCountryNamesEN) {
 		return svgMapCountryNamesEN[iso];
