@@ -22,17 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		zoomControl.style.left = 'unset';
 	}
   
-	let metalmodecheck = document.getElementById('metalmodecheck')
-	metalmodecheck.addEventListener('change', function() {
-		if (this.checked) {
-			metalMode = true;
-			distinguish();
-      console.log('metal mode: ' + metalMode)
-		} else if (!this.checked) {
-			metalMode = false;
-      console.log('metal mode: ' + metalMode)
-		}
-	});
+	
 
 });
 document.addEventListener('DOMContentLoaded', function() {
@@ -44,6 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log('metal mode: ' + metalMode)
 		} else if (!this.checked) {
 			metalMode = false;
+			distinguish();
       console.log('metal mode: ' + metalMode)
 		}
 	});
