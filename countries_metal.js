@@ -3,5 +3,6 @@ var countriesMetalMode = {
     SE: 'Sweden',
     EG: 'Egypt',
     NO: 'Norway',
-    IN: 'India'
+    IN: 'India',
+    NZ: 'New Zealand'
 }

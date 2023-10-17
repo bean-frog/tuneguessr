@@ -1,3 +1,7 @@
+17 OCT 23:
+    - Add Metal Mode, toggleable in settings. (default: off);
+    - Add play/pause, replay buttons
+    
 16 OCT 2023:
     - Countries that have been displayed within the past 10 rounds are no longer candidates for the next country.
     - (hopefully) improved SEO

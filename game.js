@@ -21,27 +21,40 @@ document.addEventListener('DOMContentLoaded', function() {
 		zoomControl.style.right = '0';
 		zoomControl.style.left = 'unset';
 	}
-  /*
+  
 	let metalmodecheck = document.getElementById('metalmodecheck')
 	metalmodecheck.addEventListener('change', function() {
 		if (this.checked) {
 			metalMode = true;
+			distinguish();
       console.log('metal mode: ' + metalMode)
 		} else if (!this.checked) {
 			metalMode = false;
       console.log('metal mode: ' + metalMode)
 		}
-	});*/
+	});
 
 });
 document.addEventListener('DOMContentLoaded', function() {
+	let metalmodecheck = document.getElementById('metalmodecheck')
+	metalmodecheck.addEventListener('change', function() {
+		if (this.checked) {
+			metalMode = true;
+			distinguish();
+      console.log('metal mode: ' + metalMode)
+		} else if (!this.checked) {
+			metalMode = false;
+      console.log('metal mode: ' + metalMode)
+		}
+	});
 	const countries = document.querySelectorAll('.svgMap-country');
 
 	function distinguish() {
 		countries.forEach(function(country) {
 			const countryCode = country.id.slice(-2);
-			if (trimmedCountryNamesEN.hasOwnProperty(countryCode)) {
-				country.style.fill = '#6b6967';
+			const countryList = metalMode == true ? countriesMetalMode : trimmedCountryNamesEN;
+			if (countryList.hasOwnProperty(countryCode)) {
+				country.style.fill = '#464646';
 			} else {
 				country.style.fill = '#909090';
 			}
@@ -50,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	function dontDistinguish() {
 		countries.forEach(function(country) {
-			country.style.fill = "#6b6967"
+			country.style.fill = "#464646"
 		});
 	}
 	const lsDistinguish = localStorage.getItem('tuneguessr-distinguishUnused');
@@ -136,17 +149,19 @@ function changeUsername(newName) {
 }
 
 function hideCheck() {
-	document.getElementById('check').style.visibility = 'hidden';
+	document.getElementById('checkarea').style.visibility = 'hidden';
 }
 
 function showCheck() {
-	document.getElementById('check').style.visibility = 'visible';
+	document.getElementById('checkarea').style.visibility = 'visible';
 }
 
 const lastCountries = [];
 function getRandomCountryISO() {
-  const countries = Object.keys(trimmedCountryNamesEN);
-  while (lastCountries.length >= 10) {
+	const countryList = metalMode == true ? countriesMetalMode : trimmedCountryNamesEN;
+  const countries = Object.keys(countryList);
+  const arrLength = metalMode == true ? 3 : 55; 
+  while (lastCountries.length >= arrLength) {
     lastCountries.shift();
   }
   let randomCountry;
@@ -181,7 +196,8 @@ function begingame() {
 	document.getElementById('status').style.backgroundColor = "white";
 	document.getElementById('status').innerHTML = "";
 	let audio = document.getElementById('tuneguessr-audio');
-	audio.src = `../audio/${localStorage.getItem('TCCBPDCBLAT')}.mp3`;
+	const audioSrc = metalMode == true ? `../audio/${localStorage.getItem('TCCBPDCBLAT')}-metal.mp3` : `../audio/${localStorage.getItem('TCCBPDCBLAT')}.mp3`;
+	audio.src = audioSrc;
 	audio.play();
 };
 //LS stats functions
@@ -271,4 +287,25 @@ document.addEventListener('keyup', e => {
 	} else {
 		return;
 	}
-})
+});
+const tgaudio = document.getElementById('tuneguessr-audio')
+    const playPauseButton = document.getElementById("playPauseButton");
+    const icon = document.getElementById("icon");
+
+    function toggleAudio() {
+      if (tgaudio.paused) {
+        tgaudio.play();
+        icon.className = 'fa fa-pause';
+      } else {
+        tgaudio.pause();
+        icon.className = 'fa fa-play';
+      }
+    }
+	function replayAudio() {
+		tgaudio.pause();
+        icon.className = 'fa fa-play';
+		tgaudio.currentTime = 0;
+		toggleAudio();
+		tgaudio.play();
+        icon.className = 'fa fa-pause';
+	  }
