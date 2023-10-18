@@ -27,6 +27,7 @@
 
   <div class="fixed z-50 lg:w-1/5 md:w-1/4 h-screen bg-white border-r border-gray-300 text-black flex flex-col items-center justify-start">
     <div class="w-full h-1/3 text-black flex flex-col items-center justify-start">
+      <button class="left-2 top-2 absolute" onclick="generalMenu.showModal()"><i class="fas fa-bars fa-xl"></i></button>
         <h1 class="text-2xl mt-6 font-semibold">Selected Country</h1>
         <h1 id="selName" class="text-2xl mt-6 font-extrabold text-blue-500"></h1>
         <div class="flex flex-row p-4">
@@ -53,9 +54,25 @@
             <i onclick="settingModal.showModal()" class="animate-scaleDownUp text-3xl fas fa-cog cursor-pointer text-blue-500 hover:text-blue-600"></i>
         </div>
         <div id="statsDiv"></div>
+
     </div>
 </div>
-
+<dialog id="generalMenu" class="modal">
+  <div class="modal-box">
+    <h1 class="font-bold text-xl">General Menu</h1>
+    <form method="dialog" class="mb-6">
+<h1 class="text-md underline" onclick="settingModal.showModal();">Looking for settings?</h1>
+    </form>
+    <h1 class="text-lg"><i class="fas fa-bug mr-2 fa-xl"></i> Spotted a bug? Report it <a target="_blank" class='underline' href="https://github.com/bean-frog/tuneguessr/issues">here.</a></h1>
+    <h1 class="text-lg"><i class="fas fa-headphones mr-2 fa-xl"></i> Song too obscure? Suggest a new one  <a target="_blank" class='underline' href="https://github.com/bean-frog/tuneguessr/issues/1">here.</a></h1>
+    
+    <div class="modal-action">
+          <form method="dialog">
+            <button class="btn">Done</button>
+          </form>
+        </div>        
+      </div>
+</dialog>
     <dialog id="settingModal" class="modal">
       <div class="modal-box">
         <h3 class="font-bold text-xl mb-4">Options</h3>
@@ -127,9 +144,7 @@
         }
     </style>
     <div id="svgMap"></div>
-    <footer class="bg-white lg:w-4/5 md:w-3/4 absolute bottom-0 right-0 py-2 pl-2 border-t border-gray-300">
-      <h1 class="text-md">Spotted a <i class="fas fa-bug"></i>bug<i class="fas fa-bug"></i>? report it <a target="_blank" class='underline' href="https://github.com/bean-frog/tuneguessr/issues">here.</a></h1>
-  </footer>
+    
 </body>
 <script src="../game.js"></script>
 <script>

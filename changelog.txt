@@ -1,3 +1,8 @@
+18 OCT 2023:
+    - Venezuela now has the correct music file
+    - Update New Zealand (normal mode)
+    - Create new secondary general menu (bug reports, etc)
+
 17 OCT 23:
     - Add Metal Mode, toggleable in settings. (default: off);
     - Add play/pause, replay buttons

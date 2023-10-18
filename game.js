@@ -21,9 +21,6 @@ document.addEventListener('DOMContentLoaded', function() {
 		zoomControl.style.right = '0';
 		zoomControl.style.left = 'unset';
 	}
-  
-	
-
 });
 document.addEventListener('DOMContentLoaded', function() {
 	let metalmodecheck = document.getElementById('metalmodecheck')
