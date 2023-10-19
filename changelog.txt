@@ -1,3 +1,6 @@
+19 OCT 2023:
+    - Added link to the guide blog post
+
 18 OCT 2023:
     - Venezuela now has the correct music file
     - Update New Zealand (normal mode)
