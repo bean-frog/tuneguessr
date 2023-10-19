@@ -112,7 +112,7 @@ function returningUser(back) {
 	const titleText = back === "noback" ? `Welcome, ${username}!` : `Welcome back, ${username}!`;
 	document.getElementById('ruModal-content').innerHTML = `
     <h3 class="font-bold text-lg">${titleText}</h3>
-	<h1 class="text-md"><i class="fas fa-book mr-2 fa-xl"></i>Need help? Check out the <a target="_blank" class='underline' href=" https:bean-frog.github.io/blog/index.html?articleId=4">Guide</a></h1>
+	<h1 class="text-md"><i class="fas fa-book mr-2 fa-xl"></i>Need help? Check out the <a target="_blank" class='underline' href="https://bean-frog.github.io/blog/index.html?articleId=4">Guide</a></h1>
 
     <div class="modal-action">
       <form method="dialog">
