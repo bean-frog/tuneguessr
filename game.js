@@ -194,6 +194,36 @@ function begingame() {
 	audio.src = audioSrc;
 	audio.play();
 };
+function playSong(iso) {
+	/* yt api code
+	(this would cause delays on low end machines)
+
+	// init this stuff earlier (dom loaded)
+var tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+// actual player stuff
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          height: '0',
+          width: '0',
+          videoId: 'M7lc1UVf-VE',
+          playerVars: {
+            'playsinline': 1
+          },
+          events: {
+            'onReady': onPlayerReady,
+          }
+        });
+      };
+      function onPlayerReady(event) {
+        event.target.playVideo();
+      }
+	*/
+}
 //LS stats functions
 function incorrectGuess() {
 	let lsIncorrect = localStorage.getItem('tuneguessr-incorrect');
